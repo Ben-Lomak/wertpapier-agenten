@@ -1,0 +1,102 @@
+{
+ "name": "sustainable_revolut",
+ "agent": "sustainable",
+ "broker": "revolut",
+ "cash": 10000,
+ "start_capital": 10000,
+ "start_date": "2026-11-27",
+ "lots": {},
+ "pos_peak": {},
+ "pending": [
+  {
+   "side": "buy",
+   "ticker": "KO",
+   "amount": 0,
+   "weight": 0.098,
+   "reason": "Neu (Rang 1, Score 0.90)"
+  },
+  {
+   "side": "buy",
+   "ticker": "IBE.MC",
+   "amount": 0,
+   "weight": 0.098,
+   "reason": "Neu (Rang 2, Score 0.87)"
+  },
+  {
+   "side": "buy",
+   "ticker": "SSE.L",
+   "amount": 0,
+   "weight": 0.098,
+   "reason": "Neu (Rang 3, Score 0.78)"
+  },
+  {
+   "side": "buy",
+   "ticker": "AI.PA",
+   "amount": 0,
+   "weight": 0.098,
+   "reason": "Neu (Rang 4, Score 0.70)"
+  },
+  {
+   "side": "buy",
+   "ticker": "ALV.DE",
+   "amount": 0,
+   "weight": 0.098,
+   "reason": "Neu (Rang 5, Score 0.69)"
+  },
+  {
+   "side": "buy",
+   "ticker": "ECL",
+   "amount": 0,
+   "weight": 0.098,
+   "reason": "Neu (Rang 6, Score 0.68)"
+  },
+  {
+   "side": "buy",
+   "ticker": "CSL.AX",
+   "amount": 0,
+   "weight": 0.098,
+   "reason": "Neu (Rang 7, Score 0.68)"
+  },
+  {
+   "side": "buy",
+   "ticker": "AMGN",
+   "amount": 0,
+   "weight": 0.098,
+   "reason": "Neu (Rang 8, Score 0.65)"
+  },
+  {
+   "side": "buy",
+   "ticker": "NG.L",
+   "amount": 0,
+   "weight": 0.098,
+   "reason": "Neu (Rang 9, Score 0.62)"
+  },
+  {
+   "side": "buy",
+   "ticker": "TXN",
+   "amount": 0,
+   "weight": 0.098,
+   "reason": "Neu (Rang 10, Score 0.61)"
+  }
+ ],
+ "trades": [],
+ "equity_curve": [
+  [
+   "2026-11-27",
+   10000
+  ]
+ ],
+ "realized": [],
+ "tax_history": [],
+ "loss_carry": [],
+ "peak_equity": 10000,
+ "cooldown_left": 0,
+ "stopped_out": [],
+ "last_date": "2026-11-27",
+ "month_key": null,
+ "orders_this_month": 0,
+ "fees_paid": 0.0,
+ "taxes_paid": 0.0,
+ "kill_switch_events": [],
+ "halted": false
+}

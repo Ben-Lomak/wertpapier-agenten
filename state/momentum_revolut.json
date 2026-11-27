@@ -1,0 +1,88 @@
+{
+ "name": "momentum_revolut",
+ "agent": "momentum",
+ "broker": "revolut",
+ "cash": 10000,
+ "start_capital": 10000,
+ "start_date": "2026-11-27",
+ "lots": {},
+ "pos_peak": {},
+ "pending": [
+  {
+   "side": "buy",
+   "ticker": "PANW",
+   "amount": 0,
+   "weight": 0.1225,
+   "reason": "Neu (Rang 1, Score 1.00)"
+  },
+  {
+   "side": "buy",
+   "ticker": "AMD",
+   "amount": 0,
+   "weight": 0.1225,
+   "reason": "Neu (Rang 2, Score 0.91)"
+  },
+  {
+   "side": "buy",
+   "ticker": "TXN",
+   "amount": 0,
+   "weight": 0.1225,
+   "reason": "Neu (Rang 3, Score 0.58)"
+  },
+  {
+   "side": "buy",
+   "ticker": "MRK",
+   "amount": 0,
+   "weight": 0.1225,
+   "reason": "Neu (Rang 4, Score 0.55)"
+  },
+  {
+   "side": "buy",
+   "ticker": "LLY",
+   "amount": 0,
+   "weight": 0.1225,
+   "reason": "Neu (Rang 5, Score 0.47)"
+  },
+  {
+   "side": "buy",
+   "ticker": "XOM",
+   "amount": 0,
+   "weight": 0.1225,
+   "reason": "Neu (Rang 6, Score 0.45)"
+  },
+  {
+   "side": "buy",
+   "ticker": "CSL.AX",
+   "amount": 0,
+   "weight": 0.1225,
+   "reason": "Neu (Rang 7, Score 0.44)"
+  },
+  {
+   "side": "buy",
+   "ticker": "ABBV",
+   "amount": 0,
+   "weight": 0.1225,
+   "reason": "Neu (Rang 8, Score 0.43)"
+  }
+ ],
+ "trades": [],
+ "equity_curve": [
+  [
+   "2026-11-27",
+   10000
+  ]
+ ],
+ "realized": [],
+ "tax_history": [],
+ "loss_carry": [],
+ "peak_equity": 10000,
+ "cooldown_left": 0,
+ "stopped_out": [],
+ "last_date": "2026-11-27",
+ "month_key": null,
+ "orders_this_month": 0,
+ "fees_paid": 0.0,
+ "taxes_paid": 0.0,
+ "kill_switch_events": [],
+ "halted": false
+}
