@@ -54,7 +54,7 @@ NOVO-B.CO
 NSIS-B.CO
 ABBN.SW
 SIKA.SW
-RELX.L
+REL.L
 SSE.L
 NG.L
 # Asien / Pazifik

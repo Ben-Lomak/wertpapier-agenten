@@ -130,3 +130,29 @@ variants:
     rebalance: monthly
     market_filter: false
     risk: {trailing_stop_pct: null, max_drawdown_pct: null, max_position_pct: 0.98, drift_threshold: 0.5}
+
+  v3_sustainable_mom:
+    label: "V3 Nachhaltig, reines Momentum"
+    universe: universes/sustainable.txt
+    strategy: momentum
+    positions: 8
+    rebalance: monthly
+    lookback_days: 252
+    blend_lookbacks: [126, 252]
+    skip_days: 21
+    trend_sma: 200
+    hold_buffer: 2.0
+    risk: *long_risk
+
+  v3_momentum_12:
+    label: "V3 Momentum, 12 Titel (breiter gestreut)"
+    universe: universes/global_momentum.txt
+    strategy: momentum
+    positions: 12
+    rebalance: monthly
+    lookback_days: 252
+    blend_lookbacks: [126, 252]
+    skip_days: 21
+    trend_sma: 200
+    hold_buffer: 2.0
+    risk: {<<: *long_risk, max_position_pct: 0.10}
