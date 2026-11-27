@@ -1,8 +1,8 @@
-## Backtest · Stand 2026-11-27
+## Backtest · Stand 2024-10-24
 
 | Depot | Wert | Rendite | max. Drawdown | nach Steuer (Liquidation) | Gebühren | Steuern | Trades |
 |---|---|---|---|---|---|---|---|
-| Momentum Global · N26 Standard | 14.251 € | +42,5 % | -30,8 % | 14.251 € | 1.514 € | 5.190 € | 1682 |
-| Momentum Global · Revolut Standard | 12.074 € | +20,7 % | -37,5 % | 12.074 € | 5.834 € | 2.948 € | 1677 |
-| Nachhaltig · N26 Standard | 15.386 € | +53,9 % | -30,4 % | 14.433 € | 840 € | 3.154 € | 933 |
-| Nachhaltig · Revolut Standard | 14.524 € | +45,2 % | -31,7 % | 13.973 € | 2.479 € | 3.131 € | 928 |
+| Momentum Global · N26 Standard | 14.259 € | +42,6 % | -34,4 % | 13.061 € | 660 € | 1.628 € | 733 |
+| Momentum Global · Revolut Standard | 12.395 € | +24,0 % | -37,7 % | 11.773 € | 2.066 € | 1.015 € | 706 |
+| Nachhaltig · N26 Standard | 11.126 € | +11,3 % | -36,0 % | 11.108 € | 364 € | 1.216 € | 404 |
+| Nachhaltig · Revolut Standard | 10.634 € | +6,3 % | -37,7 % | 10.615 € | 905 € | 1.146 € | 404 |
