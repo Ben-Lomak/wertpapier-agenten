@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+reports/backtest*.html
+reports/backtest_trades.json
+.venv/

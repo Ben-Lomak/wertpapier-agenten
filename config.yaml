@@ -1,0 +1,86 @@
+# Wertpapier-Agenten: Simulation, kein echtes Geld.
+# Alle Beträge in EUR. Prozentwerte als Dezimalzahl (0.25 % = 0.0025).
+
+start_capital_eur: 10000
+start_date_backtest: "2016-01-01"
+benchmark: "URTH"          # iShares MSCI World (USD), dient als Vergleich und Marktfilter
+
+# ---------------------------------------------------------------
+# Steuern Portugal (vereinfachtes Modell, ersetzt keine Steuerberatung)
+# ---------------------------------------------------------------
+tax:
+  country: PT
+  flat_rate: 0.28                 # taxa autónoma auf Kursgewinne
+  short_term_days: 365            # Haltedauer unter 365 Tagen = kurzfristig
+  # englobamento obrigatório: kurzfristige Gewinne werden progressiv besteuert,
+  # wenn dein Gesamteinkommen den höchsten IRS-Steuersatz erreicht.
+  short_term_mode: progressive    # progressive | flat
+  marginal_rate: 0.48             # dein Grenzsteuersatz (höchste Stufe 48 %)
+  solidarity_surcharge: 0.0       # taxa adicional de solidariedade, falls relevant (0.025 / 0.05)
+  loss_carryforward_years: 5      # Verlustvortrag (setzt englobamento voraus)
+  holding_exemptions:             # steuerfreier Anteil des Gewinns nach Haltedauer
+    - {min_years: 8, exempt: 0.30}
+    - {min_years: 5, exempt: 0.20}
+    - {min_years: 2, exempt: 0.10}
+
+# ---------------------------------------------------------------
+# Broker-Kostenmodelle (Stand November 2026)
+# ---------------------------------------------------------------
+brokers:
+  n26:
+    label: "N26 Standard"
+    fee_per_order: 0.90           # pauschal je Order seit 02.09.2026
+    free_orders_per_month: 0      # N26 Go: 3, N26 Metal: 10
+    commission_pct: 0.0
+    min_commission: 0.0
+    fx_fee_pct: 0.0               # keine Fremdwährungsgebühr
+    spread_pct: 0.0015            # angenommener Spread (Kauf bis Verkauf)
+    slippage_pct: 0.0005
+  revolut:
+    label: "Revolut Standard"
+    fee_per_order: 0.0
+    free_orders_per_month: 1      # Plus 3, Premium 5, Metal/Ultra 10
+    commission_pct: 0.0025        # 0,25 % (Ultra/Trading Pro: 0,12 % ohne Minimum)
+    min_commission: 1.0
+    fx_fee_pct: 0.0               # innerhalb Fair-Usage, danach planabhängig
+    spread_pct: 0.0015
+    slippage_pct: 0.0005
+
+# ---------------------------------------------------------------
+# Risikomanager (gilt für beide Agenten, hat Vetorecht)
+# ---------------------------------------------------------------
+risk:
+  max_position_pct: 0.15          # höchstens 15 % des Depots pro Titel
+  trailing_stop_pct: 0.12         # Verkauf bei 12 % unter Höchststand seit Kauf
+  max_drawdown_pct: 0.15          # Kill-Switch: alles verkaufen bei -15 % vom Depot-Höchststand
+  cooldown_days: 30               # Handelstage Pause nach Kill-Switch
+  capital_floor_pct: 0.25         # Kapital-Boden: bei 25 % Verlust auf das Startkapital stoppt der Agent endgültig
+  market_filter_sma: 200          # Benchmark unter 200-Tage-Schnitt = keine neuen Käufe, Bestand raus
+  cash_buffer_pct: 0.02           # 2 % Cash für Gebühren
+  min_order_eur: 250              # kleinere Orders lohnen sich nach Kosten selten
+  drift_threshold: 0.05           # bestehende Positionen nur bei 5 %-Punkten Abweichung anpassen
+
+# ---------------------------------------------------------------
+# Agenten. Jeder Agent läuft parallel mit beiden Broker-Modellen.
+# ---------------------------------------------------------------
+agents:
+  momentum:
+    label: "Momentum Global"
+    universe: universes/global_momentum.txt
+    strategy: momentum
+    positions: 8
+    rebalance: weekly             # daily | weekly | monthly
+    lookback_days: 252
+    skip_days: 21                 # letzter Monat wird ignoriert (Kurzfrist-Rauschen)
+    trend_sma: 100
+  sustainable:
+    label: "Nachhaltig"
+    universe: universes/sustainable.txt
+    strategy: sustainable
+    positions: 10
+    rebalance: monthly
+    lookback_days: 126
+    skip_days: 21
+    trend_sma: 200
+    vol_days: 63
+    momentum_weight: 0.6          # Rest: niedrige Schwankung

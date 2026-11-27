@@ -1,0 +1,65 @@
+# Startliste für den nachhaltigen Agenten.
+# Auswahl: Unternehmen, die typischerweise in SRI- und ESG-Leader-Indizes vertreten sind
+# (z. B. MSCI World SRI, Dow Jones Sustainability). Für eine exakte Basis die
+# aktuelle Bestandsliste eines SRI-ETFs einfügen, ein Ticker pro Zeile.
+# USA
+MSFT
+NVDA
+ADBE
+CRM
+INTU
+TXN
+AMAT
+ADP
+ACN
+HD
+LOW
+PG
+PEP
+KO
+JCI
+TT
+ETN
+XYL
+ECL
+NEE
+FSLR
+ENPH
+TSLA
+ZTS
+AMGN
+VRTX
+SPGI
+MCO
+ADSK
+WDAY
+IBM
+CMI
+# Europa
+ASML.AS
+SAP.DE
+SIE.DE
+ALV.DE
+MUV2.DE
+SU.PA
+AI.PA
+OR.PA
+DSY.PA
+LR.PA
+IBE.MC
+ENEL.MI
+VWS.CO
+ORSTED.CO
+NOVO-B.CO
+NSIS-B.CO
+ABBN.SW
+SIKA.SW
+RELX.L
+SSE.L
+NG.L
+# Asien / Pazifik
+6758.T
+6501.T
+8035.T
+6367.T
+CSL.AX

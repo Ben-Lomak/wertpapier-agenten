@@ -1,0 +1,40 @@
+name: Live-Simulation (täglich)
+
+on:
+  schedule:
+    - cron: "15 22 * * 1-5"     # Mo–Fr 22:15 UTC, nach US-Börsenschluss
+  workflow_dispatch: {}          # manuell startbar
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-simulation
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Agenten einen Tag weiterrechnen
+        run: python -m bots.runner live
+      - name: Zusammenfassung anzeigen
+        run: cat reports/live_summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Zustand speichern
+        run: |
+          git config user.name  "wertpapier-agent"
+          git config user.email "actions@users.noreply.github.com"
+          git add state docs reports/live_summary.md
+          git diff --cached --quiet || git commit -m "Simulation $(date -u +%Y-%m-%d)"
+          git push
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dashboard
+          path: docs/index.html
+          retention-days: 30
