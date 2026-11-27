@@ -2,9 +2,11 @@
 
 | Depot | Wert | Rendite | max. Drawdown | nach Steuer (Liquidation) | Gebühren | Steuern | Trades |
 |---|---|---|---|---|---|---|---|
-| Momentum Global · N26 Standard | 36.888 € | +268,9 % | -40,8 % | 33.381 € | 402 € | 9.757 € | 447 |
-| Momentum Global · Revolut Standard | 34.960 € | +249,6 % | -41,5 % | 31.796 € | 2.067 € | 8.867 € | 447 |
-| Nachhaltig · N26 Standard | 20.351 € | +103,5 % | -31,9 % | 18.597 € | 431 € | 2.867 € | 479 |
-| Nachhaltig · Revolut Standard | 19.528 € | +95,3 % | -32,8 % | 17.885 € | 1.246 € | 2.595 € | 479 |
-| MSCI World halten · N26 Standard | 33.745 € | +237,5 % | -33,2 % | 29.057 € | 1 € | 0 € | 1 |
-| MSCI World halten · Revolut Standard | 33.748 € | +237,5 % | -33,2 % | 29.059 € | 0 € | 0 € | 1 |
+| Momentum Global · N26 Standard | 37.228 € | +272,3 % | -40,6 % | 33.997 € | 405 € | 10.317 € | 450 |
+| Momentum Global · Revolut Standard | 34.302 € | +243,0 % | -41,5 % | 31.492 € | 2.092 € | 8.928 € | 450 |
+| Nachhaltig · N26 Standard | 20.006 € | +100,1 % | -32,0 % | 18.410 € | 431 € | 2.831 € | 479 |
+| Nachhaltig · Revolut Standard | 19.209 € | +92,1 % | -32,9 % | 17.717 € | 1.259 € | 2.523 € | 479 |
+| MSCI World halten · N26 Standard | 33.715 € | +237,1 % | -33,2 % | 29.032 € | 1 € | 0 € | 1 |
+| MSCI World halten · Revolut Standard | 33.718 € | +237,2 % | -33,2 % | 29.035 € | 0 € | 0 € | 1 |
+| High Risk: KI, Robotik, Raumfahrt · N26 Standard | 68.704 € | +587,0 % | -55,8 % | 65.369 € | 434 € | 44.813 € | 482 |
+| High Risk: KI, Robotik, Raumfahrt · Revolut Standard | 63.484 € | +534,8 % | -56,4 % | 60.907 € | 4.822 € | 41.532 € | 595 |
