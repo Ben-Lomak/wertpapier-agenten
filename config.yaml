@@ -52,7 +52,7 @@ brokers:
 risk:
   max_position_pct: 0.15          # höchstens 15 % des Depots pro Titel
   trailing_stop_pct: 0.12         # Verkauf bei 12 % unter Höchststand seit Kauf
-  max_drawdown_pct: 0.15          # Kill-Switch: alles verkaufen bei -15 % vom Depot-Höchststand
+  max_drawdown_pct: 0.15          # Kill-Switch (pro Agent abschaltbar mit null)
   cooldown_days: 30               # Handelstage Pause nach Kill-Switch
   capital_floor_pct: 0.25         # Kapital-Boden: bei 25 % Verlust auf das Startkapital stoppt der Agent endgültig
   market_filter_sma: 200          # Benchmark unter 200-Tage-Schnitt = keine neuen Käufe, Bestand raus
@@ -64,23 +64,49 @@ risk:
 # Agenten. Jeder Agent läuft parallel mit beiden Broker-Modellen.
 # ---------------------------------------------------------------
 agents:
+  # Auswahl nach Variantenvergleich vom 27.11.2026 (siehe reports/research.md)
   momentum:
     label: "Momentum Global"
     universe: universes/global_momentum.txt
     strategy: momentum
     positions: 8
-    rebalance: weekly             # daily | weekly | monthly
+    rebalance: monthly
     lookback_days: 252
-    skip_days: 21                 # letzter Monat wird ignoriert (Kurzfrist-Rauschen)
-    trend_sma: 100
+    blend_lookbacks: [126, 252]   # Mittel aus 6- und 12-Monats-Performance
+    skip_days: 21
+    trend_sma: 200
+    hold_buffer: 2.0              # Bestand bleibt, solange er unter den Top 16 ist
+    risk:
+      trailing_stop_pct: 0.25
+      max_drawdown_pct: null      # Kill-Switch aus: hat im Test mehr gekostet als geschützt
+      market_filter_buffer: 0.03
+      drift_threshold: 0.10
   sustainable:
     label: "Nachhaltig"
     universe: universes/sustainable.txt
     strategy: sustainable
     positions: 10
     rebalance: monthly
-    lookback_days: 126
+    lookback_days: 252
     skip_days: 21
     trend_sma: 200
     vol_days: 63
-    momentum_weight: 0.6          # Rest: niedrige Schwankung
+    momentum_weight: 0.6
+    hold_buffer: 2.0
+    risk:
+      trailing_stop_pct: 0.25
+      max_drawdown_pct: null
+      market_filter_buffer: 0.03
+      drift_threshold: 0.10
+  benchmark:
+    label: "MSCI World halten"
+    universe: [EUNL.DE]
+    strategy: buyhold
+    positions: 1
+    rebalance: monthly
+    market_filter: false
+    risk:
+      trailing_stop_pct: null
+      max_drawdown_pct: null
+      max_position_pct: 0.98
+      drift_threshold: 0.5
