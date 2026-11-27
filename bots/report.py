@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
-SERIES = ["--series-1", "--series-2", "--series-3", "--series-4", "--series-5", "--series-6"]
+SERIES = ["--series-1", "--series-2", "--series-3", "--series-4", "--series-5", "--series-6", "--series-7", "--series-8"]
 
 
 def _metrics(p, md, cfg):
@@ -136,9 +136,9 @@ TEMPLATE = r"""<!DOCTYPE html>
 <title>Wertpapier-Agenten · {{TITLE}}</title>
 <style>
 .viz-root{color-scheme:light;--surface-1:#fff;--surface-2:#f6f6f4;--text-primary:#191919;--text-secondary:#666;
---grid:#e6e6e6;--series-1:#257de0;--series-2:#f47230;--series-3:#00b894;--series-4:#f2a600;--series-5:#ee7fac;--series-6:#008a17;--bench:#8a8a8a}
+--grid:#e6e6e6;--series-1:#257de0;--series-2:#f47230;--series-3:#00b894;--series-4:#f2a600;--series-5:#ee7fac;--series-6:#008a17;--series-7:#6a4ce2;--series-8:#ec4647;--bench:#8a8a8a}
 @media (prefers-color-scheme:dark){.viz-root{color-scheme:dark;--surface-1:#191919;--surface-2:#222;--text-primary:#efefef;
---text-secondary:#9c9c9c;--grid:#333;--series-1:#338ced;--series-2:#e76624;--series-3:#00a888;--series-4:#d28e05;--series-5:#e24d8b;--series-6:#0aac23;--bench:#8a8a8a}}
+--text-secondary:#9c9c9c;--grid:#333;--series-1:#338ced;--series-2:#e76624;--series-3:#00a888;--series-4:#d28e05;--series-5:#e24d8b;--series-6:#0aac23;--series-7:#9887ef;--series-8:#eb6263;--bench:#8a8a8a}}
 *{box-sizing:border-box}body{margin:0}
 .viz-root{background:var(--surface-1);color:var(--text-primary);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
 min-height:100vh;padding:40px 24px}

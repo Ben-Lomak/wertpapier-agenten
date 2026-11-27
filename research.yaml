@@ -156,3 +156,17 @@ variants:
     trend_sma: 200
     hold_buffer: 2.0
     risk: {<<: *long_risk, max_position_pct: 0.10}
+
+  high_risk:
+    label: "High Risk: KI, Robotik, Raumfahrt"
+    universe: universes/high_risk_ai_robotics_space.txt
+    strategy: momentum
+    positions: 6
+    rebalance: monthly
+    lookback_days: 126
+    blend_lookbacks: [63, 126, 252]
+    skip_days: 5
+    trend_sma: 100
+    hold_buffer: 1.5
+    market_filter: false
+    risk: {max_drawdown_pct: null, trailing_stop_pct: 0.35, capital_floor_pct: 0.50, max_position_pct: 0.17, drift_threshold: 0.12}

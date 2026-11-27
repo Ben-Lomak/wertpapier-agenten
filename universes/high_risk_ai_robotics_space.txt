@@ -1,0 +1,52 @@
+# High-Risk-Universum: KI, Robotik, Raumfahrt
+# Stand 27.11.2026. Auswahl nach Titeln, die laut Berichten über Reddit (r/WallStreetBets),
+# X, StockTwits und Robinhood-Ranglisten 2026 bei Privattradern besonders gefragt sind.
+# Viele davon sind unprofitabel, hoch verschuldet oder erst kürzlich an die Börse gegangen.
+# Liste bei Bedarf aktualisieren, ein Ticker pro Zeile.
+
+# KI: Chips, Rechenzentren, Software
+NVDA
+AMD
+AVGO
+MU
+ARM
+TSM
+SMCI
+ANET
+VRT
+PLTR
+CRWV
+NBIS
+IREN
+CIFR
+SOUN
+BBAI
+IONQ
+
+# Robotik und autonome Systeme
+TSLA
+SYM
+SERV
+RR
+ISRG
+TER
+OUST
+AEVA
+HSAI
+6506.T
+6954.T
+
+# Raumfahrt
+SPCX
+RKLB
+ASTS
+LUNR
+RDW
+FLY
+PL
+BKSY
+SPIR
+VOYG
+IRDM
+KTOS
+VSAT
