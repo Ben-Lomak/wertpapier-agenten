@@ -1,6 +1,6 @@
 ## Was wäre wenn: Anlage am 2012-01-03
 
-| Titel | Einsatz | Kurs Start (EUR) | Kurs heute (EUR) | Wert heute | Faktor | p,a, | schlimmster Einbruch |
+| Titel | Einsatz | Kurs Start (EUR) | Kurs heute (EUR) | Wert heute | Faktor | p.a. | schlimmster Einbruch |
 |---|---|---|---|---|---|---|---|
 | NVDA | 5.000 € | 0,25 | 137,16 | 2.764.206 € | 553x | +52,8% | -61% |
 | TSLA | 5.000 € | 1,45 | 364,56 | 1.260.085 € | 252x | +44,9% | -71% |
@@ -26,4 +26,4 @@ Depotwert jeweils zum Jahresende:
 | 2025 | 4.515.353 € |
 | 2026 | 4.024.291 € |
 
-Kursstand: 27,11,2026, Splits und Dividenden berücksichtigt. vor Kosten und Steuern,
+Kursstand: 27.11.2026. Splits und Dividenden berücksichtigt, vor Kosten und Steuern.

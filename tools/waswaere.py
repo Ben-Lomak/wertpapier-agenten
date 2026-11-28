@@ -39,5 +39,7 @@ yearly = tot.groupby(tot.index.year).last()
 out += ["", "Depotwert jeweils zum Jahresende:", "", "| Jahr | Wert |", "|---|---|"]
 out += [f"| {y} | {v:,.0f} € |" for y, v in yearly.items()]
 out += ["", f"Kursstand: {tot.index[-1]:%d.%m.%Y}. Splits und Dividenden berücksichtigt, vor Kosten und Steuern."]
-open("reports/waswaere.md", "w", encoding="utf-8").write("\n".join(out).replace(",", "X").replace(".", ",").replace("X", ".") + "\n")
+import re
+de = lambda line: re.sub(r"[-+]?\d[\d,]*\.?\d*", lambda m: m.group(0).replace(",", "X").replace(".", ",").replace("X", "."), line) if line.startswith("|") else line
+open("reports/waswaere.md", "w", encoding="utf-8").write("\n".join(de(l) for l in out) + "\n")
 print("\n".join(out))
